@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/dcwalker3/Stock-App-API#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "firebase-admin": "^10.0.2",
+    "helmet": "^5.0.2",
+    "mongoose": "^6.1.9",
+    "morgan": "^1.10.0"
   }
 }
