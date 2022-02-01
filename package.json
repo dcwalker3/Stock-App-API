@@ -1,0 +1,22 @@
+{
+  "name": "stock-app-api",
+  "version": "1.0.0",
+  "description": "Stock App API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcwalker3/Stock-App-API.git"
+  },
+  "author": "Dakota Walker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcwalker3/Stock-App-API/issues"
+  },
+  "homepage": "https://github.com/dcwalker3/Stock-App-API#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
