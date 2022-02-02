@@ -1,6 +1,9 @@
 # Node Modules
 node_modules
 
+# Firebase
+firebase
+
 # DotEnv
 .env
 .env.local
