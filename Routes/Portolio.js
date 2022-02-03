@@ -57,7 +57,6 @@ router.post('/', (req, res) => {
                         return res.status(404).json({error: err});
                     }
                 }
-                // No errors then all clear.
                 else {
                     return res.status(200).json(`User ${portfolio.email}'s Portfolio has been Added!`)
                 }

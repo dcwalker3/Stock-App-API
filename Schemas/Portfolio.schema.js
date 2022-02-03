@@ -1,10 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Schema for a Stock the User Posses.
+/*
+ * I created a new schema instead of using the stock schema due to
+ * we need less information for this schema. For example, we only need symbol and amount
+ * because we can then request additional data from our Stock Collection.
+ */
 const subSchema = new Schema({
     stockSymbol: {
         type: String,
-        required: true
+        required: true,
+        minLength: 1
     },
     shareAmount: {
         type: String,
