@@ -5,8 +5,6 @@ function isAuthorized(token, email, callback) {
         .auth()
         .verifyIdToken(token)
             .then(userToken => {
-                console.log(userToken.email);
-                console.log(email);
                 if(userToken.email === email){
                     callback(true);
                 } else {

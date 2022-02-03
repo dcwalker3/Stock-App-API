@@ -7,29 +7,39 @@ const auth = require('../Scripts/Auth');
 
 require('dotenv').config();
 
-// API key to finnhub.
-const apiKey = process.env.FINNHUB_API_KEY;
+const stockFunctions = require('../RouteFunctions/StockFunctions');
 
 // Get basic stock information
 router.post('/', ((req, res) => {
     auth.isAuthorized(req.body.token, req.body.email, function(isAuthed){
-        if(isAuthed){    
-            // Launch axios request.
-            axios
-                .get(`https://finnhub.io/api/v1/quote?symbol=${req.body.ticker}&token=${apiKey}`)
-                .then(function (response) {
-                    // Send response data.
-                    res.status(200).json({data: response.data});
-                })
-                .catch(function (error) {
-                    // Send error information.
-                    res.status(404).json({error: error})
-                })
+        if(isAuthed){
+            // Get Quote
+            stockFunctions.Quote(req.body.ticker, function(respone){
+                if(respone){
+                    res.status(200).json({data: respone});
+                } else{
+                    res.status(404).json("ERROR OCCURRED!!!");
+                }
+            })
         } else{
             res.status(401).json('Unauthorized User!');
         }
     })
 }));
+
+router.post('/add', (((req, res) => {
+    auth.isAuthorized(req.body.token, req.body.email, function(isAuthed) {
+        if(isAuthed){
+            for(let stock in req.body.stocks){
+                console.log("Stock: "+stock);
+            }
+        }
+        else{
+            console.log(req.body.email);
+            res.status(401).json("Unauthorized User!!")
+        }
+    })
+})))
 
 
 

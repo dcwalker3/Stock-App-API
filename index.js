@@ -44,6 +44,8 @@ const connection_string = process.env.DB_CONNECTION_STRING;
 const db_name = process.env.DB_NAME;
 const api_key = process.env.FINNHUB_API_KEY;
 
+require('./Scripts/Socket');
+
 // TODO: Implement the WebSocket below on the backend and connect to DB so we can query it.
 /*
 const socket = new WebSocket(`wss://ws.finnhub.io?token=${api_key}`);

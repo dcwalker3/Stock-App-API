@@ -13,6 +13,14 @@ const StockSchema = new Schema({
         required: true,
         min: 0
     },
+    high: {
+        type: Number,
+        min: 0
+    },
+    low: {
+        type: Number,
+        min: 0
+    },
     openPrice: {
         type: Number,
         min: 0
@@ -20,6 +28,9 @@ const StockSchema = new Schema({
     closePrice: {
         type: Number,
         min: 0
+    },
+    change:{
+        type: Number
     },
     dailyChange: {
         type: Number
