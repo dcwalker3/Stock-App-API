@@ -11,7 +11,7 @@ require('dotenv').config();
 const apiKey = process.env.FINNHUB_API_KEY;
 
 // Get basic stock information
-router.get('/quote/', ((req, res) => {
+router.post('/', ((req, res) => {
     auth.isAuthorized(req.body.token, req.body.email, function(isAuthed){
         if(isAuthed){    
             // Launch axios request.
@@ -30,5 +30,7 @@ router.get('/quote/', ((req, res) => {
         }
     })
 }));
+
+
 
 module.exports = router;

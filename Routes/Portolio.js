@@ -32,6 +32,7 @@ router.post('/getByEmail', ((req, res) => {
 }))
 
 router.post('/', (req, res) => {
+    console.log("Request Received")
     auth.isAuthorized(req.body.token, req.body.email, function(isAuthed){
         if(isAuthed){
             // Create Portfolio
@@ -58,9 +59,6 @@ router.post('/', (req, res) => {
                 }
                 // No errors then all clear.
                 else {
-                    const user = new User({
-                        email: req.body.email
-                    })
                     return res.status(200).json(`User ${portfolio.email}'s Portfolio has been Added!`)
                 }
             })
@@ -82,7 +80,7 @@ router.delete('/', (req, res) => {
 
             })
         } else{
-            res.status(401),json('Unauthorized User!')
+            res.status(401).json('Unauthorized User!')
         }
     })
 })
