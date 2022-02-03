@@ -56,11 +56,7 @@ router.post('/', (req, res) => {
                         return res.status(404).json({error: err});
                     }
                 }
-                // No errors then all clear.
                 else {
-                    const user = new User({
-                        email: req.body.email
-                    })
                     return res.status(200).json(`User ${portfolio.email}'s Portfolio has been Added!`)
                 }
             })
@@ -82,7 +78,7 @@ router.delete('/', (req, res) => {
 
             })
         } else{
-            res.status(401),json('Unauthorized User!')
+            res.status(401).json('Unauthorized User!')
         }
     })
 })
