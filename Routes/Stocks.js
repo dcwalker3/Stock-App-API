@@ -27,19 +27,7 @@ router.post('/', ((req, res) => {
     })
 }));
 
-router.post('/add', (((req, res) => {
-    auth.isAuthorized(req.body.token, req.body.email, function(isAuthed) {
-        if(isAuthed){
-            for(let stock in req.body.stocks){
-                console.log("Stock: "+stock);
-            }
-        }
-        else{
-            console.log(req.body.email);
-            res.status(401).json("Unauthorized User!!")
-        }
-    })
-})))
+
 
 
 

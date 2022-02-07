@@ -68,6 +68,8 @@ var unsubscribe = function(symbol) {
 }
  */
 
+require('./WebSockets/FinnhubSocket');
+
 // Routes
 const stocks = require('./Routes/Stocks');
 const portfolio = require('./Routes/Portolio');
